@@ -10,7 +10,6 @@ model.load_model('models/food_delivery_time_model.json')
 st.title('🍔 Food Delivery Time Predictor')
 st.write('Fill in the details below to predict delivery time')
 
-# correlation data from your actual results
 correlation_data = {
     'multiple_deliveries': 0.379,
     'road_traffic_density_Jam': 0.351,
@@ -66,19 +65,19 @@ with predictor_col:
             'weatherconditions_conditions Stormy': 1 if weather == 'Stormy' else 0,
             'weatherconditions_conditions Sunny': 1 if weather == 'Sunny' else 0,
             'weatherconditions_conditions Windy': 1 if weather == 'Windy' else 0,
-            'road_traffic_density_Jam ': 1 if traffic == 'Jam' else 0,
-            'road_traffic_density_Low ': 1 if traffic == 'Low' else 0,
-            'road_traffic_density_Medium ': 1 if traffic == 'Medium' else 0,
-            'type_of_order_Drinks ': 1 if order_type == 'Drinks' else 0,
-            'type_of_order_Meal ': 1 if order_type == 'Meal' else 0,
-            'type_of_order_Snack ': 1 if order_type == 'Snack' else 0,
-            'type_of_vehicle_motorcycle ': 1 if vehicle_type == 'motorcycle' else 0,
-            'type_of_vehicle_scooter ': 1 if vehicle_type == 'scooter' else 0,
-            'festival_No ': 1 if festival == 'No' else 0,
-            'festival_Yes ': 1 if festival == 'Yes' else 0,
-            'city_NaN ': 0,
-            'city_Semi-Urban ': 1 if city == 'Semi-Urban' else 0,
-            'city_Urban ': 1 if city == 'Urban' else 0,
+            'road_traffic_density_Jam': 1 if traffic == 'Jam' else 0,
+            'road_traffic_density_Low': 1 if traffic == 'Low' else 0,
+            'road_traffic_density_Medium': 1 if traffic == 'Medium' else 0,
+            'type_of_order_Drinks': 1 if order_type == 'Drinks' else 0,
+            'type_of_order_Meal': 1 if order_type == 'Meal' else 0,
+            'type_of_order_Snack': 1 if order_type == 'Snack' else 0,
+            'type_of_vehicle_motorcycle': 1 if vehicle_type == 'motorcycle' else 0,
+            'type_of_vehicle_scooter': 1 if vehicle_type == 'scooter' else 0,
+            'festival_No': 1 if festival == 'No' else 0,
+            'festival_Yes': 1 if festival == 'Yes' else 0,
+            'city_NaN': 0,
+            'city_Semi-Urban': 1 if city == 'Semi-Urban' else 0,
+            'city_Urban': 1 if city == 'Urban' else 0,
         }
         return pd.DataFrame([data])
 

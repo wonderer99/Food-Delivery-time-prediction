@@ -46,6 +46,7 @@ def preprocess(df):
     
     cat_cols = ['weatherconditions','road_traffic_density','type_of_order','type_of_vehicle','festival','city']
     df = pd.get_dummies(df, columns = cat_cols,drop_first=True)
+    
     df.columns = df.columns.str.strip()
     bool_cols = df.select_dtypes('bool').columns
     df[bool_cols] = df[bool_cols].astype(int)
