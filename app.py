@@ -39,7 +39,9 @@ with predictor_col:
         vehicle_condition = st.selectbox('Vehicle Condition', [0, 1, 2, 3],
                                           format_func=lambda x: ['Poor','Fair','Good','Excellent'][x])
         multiple_deliveries = st.selectbox('Multiple Deliveries', [0, 1, 2, 3])
-        distance = st.slider('Distance', 0.14, 0.51, 0.35, step=0.01)
+        # user sees km, model gets degrees
+        distance_km = st.slider('Distance (km)', 1.0, 30.0, 5.0, step=0.5)
+        distance = distance_km / 111
 
     with col2:
         weather = st.selectbox('Weather', ['Cloudy', 'Fog', 'Sandstorms', 'Stormy', 'Sunny', 'Windy'])
@@ -88,8 +90,8 @@ with predictor_col:
         st.write('---')
         m1, m2, m3 = st.columns(3)
         m1.metric("Predicted Time", f"{prediction:.0f} min")
-        m2.metric("Traffic", traffic)
-        m3.metric("Weather", weather)
+        m2.metric("Distance", f"{distance_km} km")
+        m3.metric("Traffic", traffic)
 
 with chart_col:
     st.write('### What affects delivery time?')
