@@ -51,7 +51,7 @@ with predictor_col:
         festival = st.selectbox('Festival', ['No', 'Yes'])
         city = st.selectbox('City Type', ['Urban', 'Semi-Urban', 'Metropolitian'])
         order_hour = st.slider('Order Hour', 0, 23, 19)
-        cook_diff = st.slider('Prep Time (minutes)', 5, 15, 10)
+        cook_diff = st.slider('Prep Time (minutes)', 5, 300, 10)
 
     def make_input():
         data = {
