@@ -1,9 +1,9 @@
-# 🍔 Food Delivery Time Predictor
+# Food Delivery Time Predictor
 
 Predicts food delivery time using XGBoost based on traffic, weather, distance and more.
 
 ## Live Demo
-👉 [Try the app here](https://food-delivery-time-prediction-esthuxhcxwwrqwjjpakfwd.streamlit.app/)
+[Try the app here](https://food-delivery-time-prediction-esthuxhcxwwrqwjjpakfwd.streamlit.app/)
 
 ## Results
 - MAE: 3.81 minutes
